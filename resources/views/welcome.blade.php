@@ -8,7 +8,7 @@
 </head>
 <body class="bg-gray-100">
 
-
+<p>hi</p>
 </body>
 
 </html>

@@ -9,20 +9,21 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/format-html', function () {
+        return view('feature.format-html');
+    });
+    Route::get('/format-json', function () {
+        return view('feature.format-json');
+    });
+    Route::get('/format-sql', function () {
+        return view('feature.format-sql');
+    });
 });
-Route::get('/format-html', function () {
-    return view('feature.format-html');
-});
-Route::get('/format-json', function () {
-    return view('feature.format-json');
-});
-Route::get('/format-sql', function () {
-    return view('feature.format-sql');
-});
-require __DIR__.'/auth.php';
+
+require __DIR__ . '/auth.php';
