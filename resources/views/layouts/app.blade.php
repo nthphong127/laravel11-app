@@ -41,7 +41,13 @@
                             <span x-show="open" class="text-sm">Dashboard</span>
                         </a>
                     </li>
-
+                     <li>
+                        <a href="{{ route('notes.index') }}"
+                            class="flex items-center gap-3 px-4 py-2 hover:bg-gray-700 transition">
+                            <span class="material-icons">note</span>
+                            <span x-show="open" class="text-sm">Note</span>
+                        </a>
+                    </li>
                     <!-- Settings with submenu -->
                     <li x-data="{ subOpen: false }">
                         <button @click="subOpen = !subOpen"
